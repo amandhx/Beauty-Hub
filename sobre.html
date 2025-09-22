@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Cadastro (cliente)</title>
-    <link rel="stylesheet" href="./css/cadastro.css">
+    <title>Página Sobre</title>
+    <link rel="stylesheet" href="css/sobre.css">
 </head>
 
 <body>
+    
 <!-- DROPDOWN (MENU DE NAVEGAÇÃO) -->
 <nav>
     <div class="logo"><a href="#"><img src="img/logotipo.png" alt=""></a></div>
@@ -19,35 +20,26 @@
         <li><a href="login.html">Login</a></li>
     </ul>
 </nav>
-<br>
 
-<!-- CADRASTRO -->
-<div class="container-cadastro">
-    <h2>Cadastro</h2>
-    <form action="login.html" method="post">
-        <div class="input-group">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
+<!-- SOBRE -->
+<section id="sobre">
+    <div class="container">
+        <div class="intro">
+            <h2>Um pouquinho de mim</h2>
+            <p > Descrição de Wanessa de forma pessoal para dar introdução a sua parte profissional </p>
         </div>
-        <div class="input-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+        
+        <div class="historia">
+            <h2>Minha História como profissional</h2>
+            <p> História de Wanessa profissionalmente </p>
         </div>
-        <div class="input-group">
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
+        
+        <div class="valores">
+            <h2>Meus Valores e Objetivos</h2>
+            <p> Quais são os valores que Wanessa carrega consigo e quais seus objetivos como profissional </p>
         </div>
-        <div class="input-group">
-            <label for="confirm-password">Confirmar Senha:</label>
-            <input type="password" id="confirm-password" name="confirm-password" required>
-        </div>
-        <button type="submit">Cadastrar</button>
-    </form>
-    <div class="login-link">
-        <p>Já tem uma conta? <a href="login.html">Faça login</a></p>
     </div>
-</div>
-<br>
+</section>
 
 <!-- FOOTER -->
 <footer>
@@ -77,5 +69,6 @@
     </div>
 </footer>
 
-<body>
+</body>
+
 </html>
