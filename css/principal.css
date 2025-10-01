@@ -6,6 +6,10 @@
 /* CORPO */
 body {
     background-color: #fde8e8; /* Cor de fundo */
+    min-height: 100vh; /* O corpo ocupa no mínimo 100% da altura da tela */
+    display: flex; 
+    flex-direction: column; /* Coloca os elementos em coluna (nav, main, footer) */
+    margin: 0; /* Remove margens padrão do body */
 }
 
         /* DROPDOWN */
@@ -98,11 +102,126 @@ nav ul li a:hover{
     display:block; /* Remove qualquer espaço extra ao redor da imagem */
 }
 
+/* CORPO */
+main {
+    max-width: 1200px; 
+    margin: 20px auto;
+    padding: 0 20px;
+    flex-grow: 1; /* Para o sticky footer funcionar */
+}
+
+/* Estilo para Botões */
+.btn-agendar, .btn-conhecer, .btn-whatsapp {
+    display: inline-block;
+    background-color: #eabfb9; /* Cor de destaque */
+    color: #505050;
+    padding: 12px 25px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    letter-spacing: 1px;
+}
+
+.btn-agendar:hover, .btn-conhecer:hover, .btn-whatsapp:hover {
+    background-color: #ffce51a8; /* Outra cor de destaque ao passar o mouse */
+}
+
+/* Serviços em Destaque */
+.servicos-destaque h3, .depoimentos h3, .apresentacao-rapida h3, .contato-localizacao h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: #505050;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+}
+
+.cards-servicos {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap; /* Para quebrar linha em telas menores */
+}
+
+.card {
+    flex-basis: calc(33% - 20px); /* 3 cards por linha com espaçamento */
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+/* Apresentação Rápida */
+.apresentacao-rapida {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.apresentacao-rapida img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+    object-fit: cover;
+}
+
+.apresentacao-rapida div {
+    flex-grow: 1;
+}
+
+/* Depoimentos */
+.depoimento-item {
+    background-color: #fff3f3;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-left: 5px solid #eabfb9;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.depoimento-item span {
+    display: block;
+    margin-top: 10px;
+    font-style: italic;
+    color: #888;
+}
+
+/* Contato/Localização */
+.contato-localizacao {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.mapa-placeholder {
+    height: 300px;
+    background-color: #ccc;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #505050;
+}
 
         /* FOOTER */
 footer{
-    position: fixed;
-    bottom: 0;
     width: 100%;
     padding: 10px;
     background-color: #505050; /* Cor de fundo da página */

@@ -5,6 +5,10 @@
         /* CORPO */
 body {
     background-color: #fde8e8; /* Cor de fundo */
+    min-height: 100vh; /* O corpo ocupa no mínimo 100% da altura da tela */
+    display: flex; 
+    flex-direction: column; /* Coloca os elementos em coluna (nav, main, footer) */
+    margin: 0; /* Remove margens padrão do body */
 }
 
         /* DROPDOWN */
@@ -118,8 +122,6 @@ button:hover {
 
         /* FOOTER */
 footer{
-    position: fixed;
-    bottom: 0;
     width: 100%;
     padding: 10px;
     background-color: #505050; /* Cor de fundo da página */
