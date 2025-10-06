@@ -1,37 +1,37 @@
 /* FONTES */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&displ…');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800…');
+ 
+ 
 /* CORPO */
 body {
     background-color: #fde8e8; /* Cor de fundo */
     min-height: 100vh; /* O corpo ocupa no mínimo 100% da altura da tela */
-    display: flex; 
+    display: flex;
     flex-direction: column; /* Coloca os elementos em coluna (nav, main, footer) */
     margin: 0; /* Remove margens padrão do body */
 }
-
+ 
         /* DROPDOWN */
 /* estilo do menu do dropdown */
 nav{
     background-color: #505050; /* Cor de fundo do menu */
     padding: 10px 0; /* Espaçamento interno */
 }
-
+ 
 nav ul{
     list-style-type: none; /* Remove os marcadores da lista */
-    margin: 0; 
-    padding: 0; 
+    margin: 0;
+    padding: 0;
     display: flex; /* Usa flexbox para layout horizontal */
     justify-content: center; /* Centraliza os itens horizontalmente */
 }
-
+ 
 nav ul li{
 position: relative; /* Necessário para o posicionamento do dropdown */
 margin: 0 15px; /* Espaçamento entre os itens */
 }
-
+ 
 nav ul li a{
     color: white; /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado */
@@ -41,29 +41,300 @@ nav ul li a{
     font-style: normal; /* Estilo da fonte */
     font-size: 20px; /* Tamanho da fonte */
     padding: 10px; /* Espaçamento interno */
-    display: block; 
+    display: block;
     /* Torna o link clicável em toda a área */
     transition: color 0.3s;
 }
-
+ 
 nav ul li a:hover{
-    color:#eabfb9; /* Cor do texto ao passar o mouse */ 
+    color:#eabfb9; /* Cor do texto ao passar o mouse */
 }
-
-
+ 
+ 
 /* Logo */
 .logo img{
     position: absolute; /* Posiciona o logo de forma absoluta */
     margin-right: auto; /* Centraliza horizontalmente */
     margin-left: 100px; /* Margem para trazer ele para o lado direito */
     margin-top: 10px 10px 30px 20px; /* Margem para trazer ele para baixo */
-    padding: 4px; 
-    width: 40px; 
+    padding: 4px;
+    width: 40px;
     border-radius: 24px; /* Colocar borda redonda */
+}
+ 
+/* --- ESTILOS GERAIS DA PÁGINA AGENDA --- */
+ 
+/* Centraliza o título */
+h1 {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: #505050;
+    font-family: "Playfair Display", serif;
+    font-size: 2.5em;
+}
+ 
+/* Layout Principal: Flexbox para alinhar lado a lado (Agenda e Resumo) */
+.agenda-container {
+    display: flex; /* Usa flexbox para layout horizontal */
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 20px auto; /* Centraliza horizontalmente */
+    padding: 0 20px; /* Espaçamento lateral */
+    gap: 30px; /* Espaçamento entre os blocos */
+    flex-wrap: wrap; /* Permite que os blocos quebrem em telas menores */
+    flex-grow: 1; /* Garante que o main ocupe o espaço restante */
+}
+ 
+.bloco-agenda {
+    flex: 2; /* Ocupa mais espaço */
+    min-width: 300px; /* Garante que o bloco não fique muito estreito */
+}
+ 
+.bloco-resumo {
+    flex: 1; /* Ocupa menos espaço */
+    min-width: 250px;
+}
+ 
+/* Estilo para as caixas de seção */
+section {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 25px;
+}
+ 
+section h2 {
+    color: #505050;
+    font-family: "Playfair Display", serif;
+    border-bottom: 2px solid #eabfb9;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+ 
+/* --- ESTILOS DE INPUTS E BOTÕES --- */
+ 
+.input-group {
+    margin-bottom: 15px;
+}
+ 
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #505050;
+}
+ 
+select, input[type="text"], input[type="tel"], input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+ 
+/* Estilo do botão principal */
+#iniciar-confirmacao-btn, .finalizar-btn {
+    background-color: #eabfb9; /* Cor de destaque */
+    color: #505050;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+ 
+#iniciar-confirmacao-btn:hover:not(:disabled), .finalizar-btn:hover {
+    background-color: #d1a9a4;
+}
+ 
+#iniciar-confirmacao-btn:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+ 
+/* --- CALENDÁRIO --- */
+ 
+.calendario {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+ 
+.mes-titulo {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #505050;
+    margin-bottom: 10px;
+}
+ 
+.dias-semana, .calendario-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+ 
+.dias-semana span {
+    font-weight: bold;
+    color: #505050;
+    padding: 5px 0;
+}
+ 
+.calendario-grid .day {
+    padding: 10px 5px;
+    cursor: default;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: 600;
+}
+ 
+.calendario-grid .day.available {
+    cursor: pointer;
+    color: #505050;
+}
+ 
+.calendario-grid .day.available:hover {
+    background-color: #eabfb9;
+    color: white;
+}
+ 
+.calendario-grid .day.selected {
+    background-color: #505050;
+    color: white;
+    border: 2px solid #eabfb9;
+}
+ 
+.calendario-grid .day.other-month {
+    color: #ccc;
+    cursor: default;
+}
+ 
+/* --- HORÁRIOS DISPONÍVEIS --- */
+ 
+.time-slots-section h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+ 
+.time-slots-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+ 
+.time-slot {
+    flex: 0 0 calc(33.333% - 7px); /* 3 colunas em tela cheia */
+    padding: 10px 5px;
+    background-color: #f4f4f4;
+    color: #505050;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.95em;
+    text-align: center;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+ 
+.time-slot.unavailable {
+    background-color: #f7e1e1;
+    color: #888;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+ 
+.time-slot:not(.unavailable):hover {
+    background-color: #eabfb9;
+    border-color: #eabfb9;
+    color: white;
+}
+ 
+.time-slot.selected {
+    background-color: #505050;
+    border-color: #505050;
+    color: white;
+}
+ 
+.placeholder-text {
+    color: #999;
+    font-style: italic;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+ 
+ 
+/* --- RESUMO DE AGENDAMENTO --- */
+ 
+.resumo-detalhes p {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-left: 4px solid #eabfb9;
+    margin-bottom: 10px;
+}
+ 
+.total-estimado {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #505050;
+    margin-top: 20px;
+    padding: 15px 10px !important;
+    border-left: 4px solid #505050 !important;
+}
+ 
+/* Oculta a seção de dados pessoais no início */
+.hidden {
+    display: none;
+}
+ 
+/* --- RESPONSIVIDADE (Telas Menores) --- */
+ 
+@media (max-width: 768px) {
+    .agenda-container {
+        flex-direction: column; /* Coloca os blocos de agenda e resumo um abaixo do outro */
+    }
+   
+    .bloco-agenda, .bloco-resumo {
+        min-width: 100%;
+    }
+ 
+    .time-slot {
+        flex: 0 0 calc(50% - 5px); /* 2 colunas em mobile */
+    }
+ 
+    nav ul {
+        flex-wrap: wrap;
+    }
+   
+    nav ul li {
+        margin: 5px 10px;
+    }
+   
+    .logo img {
+        margin-left: 20px;
+    }
+   
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+   
+    .footer-section {
+        flex-basis: 100%;
+        text-align: center;
+    }
 }
 
 
-
+ 
         /* FOOTER */
 footer{
     width: 100%;
@@ -74,7 +345,7 @@ footer{
     /* Padding:recuo da borda para dentro - Margin:recuo da borda para fora*/
     font-family: Georgia, Times, 'Times New Roman', serif; /* Estilo da fonte */
 }
-
+ 
 /* O footer a seguir tem um "." e não é igual o de cima, por que ele tem class */
 .footer-content{
     display: flex;
@@ -89,42 +360,42 @@ footer{
     font-style: normal; /* Estilo da fonte */
     font-size: 17px; /* Tamanho da fonte */
 }
-
+ 
 .footer-section{
     flex-basis: 23%; /* Faz com que as seções ocupem 23% da largura, com espaço para margens */
     margin-bottom: 20px; /* Espaçamento inferior para telas menores */
 }
-
+ 
 .footer-section h4{ /* Estilo dos títulos */
     margin-bottom: 15px;
     font-size: 18px;
     color: #ffce51a8;
 }
-
+ 
 .footer-section p, .footer-section ul{
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
-
+ 
 .footer-section ul{
     list-style-type: none;
 }
-
+ 
 .footer-section ul li{
     margin-bottom: 10px;
 }
-
+ 
 .footer-section ul li a{
     color: rgb(100, 99, 99);
     text-decoration: none;
     transition: color 0.3s;
 }
-
+ 
 .footer-section ul li a:hover{
     color: #eabfb9;
 }
-
+ 
 .social-links a{
     display: inline-block;
     margin-right: 10px;
@@ -132,11 +403,11 @@ footer{
     text-decoration: none;
     transition: color 0.3s;
 }
-
+ 
 .social-links a:hover{
     color: #eabfb9;
 }
-
+ 
 .footer-bottom{
     text-align: center;
     margin-top: 20px;
@@ -144,7 +415,7 @@ footer{
     border-top: 1px solid #000000;
     font-size: 14px;
 }
-
+ 
 .footer-bottom p{
     margin: 0;
     color: #ffce51a8;

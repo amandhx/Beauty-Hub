@@ -1,6 +1,9 @@
 /* FONTES */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap'); 
+
 
 
 /* CORPO */
@@ -64,41 +67,38 @@ nav ul li a:hover{
 
 /* CONTAINER PRINCIPAL E SEÇÕES */
 .services-container {
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 1100px;
+    margin: 40px auto;
     padding: 0 20px;
 }
  
 .service-category {
-    padding: 30px 0;
+    padding: 40px 0 0;
 }
 
-.service-image {
-    
-}
-
-.photo-cell {
-    padding: 10px;
-    text-align: center;
-}
- 
 .category-title {
-    font-size: 1.8em;
-    color: #880e4f; /* Tom de rosa/vinho */
-    margin-bottom: 10px;
-    border-left: 5px solid #ff4081;
+    font-size: 2.2em;
+    color: #505050; /* Cinza escuro para contraste */
+    font-family: "Prata", serif;
+    font-weight: 600;
+    border: none; /* Remove borda padrão */
+    position: relative; /* Necessário para o pseudo-elemento */
+    border-radius: 2px;
+    position: relative;
+    border-left: 5px solid #ffce51a8;
     padding-left: 15px;
+
 }
- 
+
 hr {
     border: 0;
-    border-top: 1px solid #eee;
-    margin: 20px 0;
+    border-top: 1px solid #eabfb9; /* Linha mais suave */
+    margin: 40px 0;
 }
  
 /* TABELAS DE SERVIÇOS */
 .table-responsive {
-    overflow-x: auto; /* Garante que a tabela não quebre o layout em telas pequenas */
+    overflow-x: auto;
     margin-bottom: 20px;
 }
  
@@ -106,29 +106,73 @@ table {
     width: 100%;
     border-collapse: collapse;
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra mais visível e elegante */
+    border-radius: 10px; /* Cantos arredondados na tabela */
+    overflow: hidden; /* Garante que a sombra e borda apareçam corretamente */
 }
  
 table th, table td {
-    padding: 15px;
+    padding: 12px 15px; /* Padding ajustado */
     text-align: left;
-    border-bottom: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f9e3e3; /* Borda mais clara */
 }
- 
+/* Alinhamento de colunas importantes */
+table th:nth-child(1), table td:nth-child(1),
+table th:nth-child(4), table td:nth-child(4),
+table th:nth-child(5), table td:nth-child(5),
+table th:nth-child(6), table td:nth-child(6) {
+    text-align: center; /* Centraliza foto, duração, preço e manutenção */
+}
+
 table thead th {
-    background-color: #f7e6f8;
-    color: #4a148c;
-    font-weight: 600;
+    background-color: #eabfb9; /* Cor de fundo mais suave e da paleta */
+    color: #505050; /* Cor do texto escuro */
+    font-weight: 700;
     text-transform: uppercase;
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    font-size: 0.9em;
 }
  
 table tbody tr:hover {
-    background-color: #fffafc;
+    background-color: #f7e6e3; /* Efeito hover mais suave */
 }
- 
-/* SEÇÃO DE PACOTES */
+
+.photo-cell {
+    width: 120px; /* Largura fixa para a célula da foto */
+    min-width: 120px; /* Garante que a célula não encolha demais */
+    padding: 10px;
+    text-align: center;
+}
+
+.service-image {
+    width: 100px; /* Largura do contêiner da imagem */
+    height: 100px; /* Altura do contêiner da imagem */
+    margin: 0 auto; /* Centraliza o contêiner dentro da célula */
+    border-radius: 50%; /* Faz o contêiner ser circular */
+    overflow: hidden; /* Esconde partes da imagem que saem do círculo */
+    border: 3px solid #ffce51a8; /* Borda de destaque */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o círculo sem distorcer */
+    display: block;
+}
+
+/* SEÇÃO DE CURSOS/PACOTES */
+.category-description {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
 .packages-section {
     text-align: center;
+    padding-bottom: 60px;
 }
  
 .package-cards {
@@ -140,34 +184,34 @@ table tbody tr:hover {
 }
  
 .package-card {
-    background-color: white;
-    padding: 25px;
+    background-color: #ffffff;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    width: 300px;
-    transition: transform 0.3s;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12); /* Sombra mais profunda */
+    width: 350px; /* Ligeiramente mais largo */
+    transition: all 0.3s ease-in-out;
+    border-left: 5px solid #ffce51a8; /* Toque de cor lateral */
 }
  
 .package-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
  
 .package-card h3 {
-    color: #4a148c;
+    color: #505050;
+    font-family: "Prata", serif;
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
  
-.discount {
-    display: block;
-    color: #ff4081;
-    font-weight: 700;
-    margin-top: 10px;
+.package-card p {
+    color: #666;
+    margin-top: 15px;
+    font-size: 1em;
 }
- 
-.package-card.featured {
-    border: 3px solid #ff4081;
-    background-color: #fff9fc;
-}
+
+
 
         /* FOOTER */
 footer{
