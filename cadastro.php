@@ -1,3 +1,65 @@
+<?php
+// CONFIGURAÇÕES DE CONEXÃO
+$host = "localhost";
+$usuario = "root";
+$senha = "";
+$banco = "db_beauty_hub";
+
+// Conecta ao banco de dados
+$conn = new mysqli($host, $usuario, $senha, $banco);
+
+// Verifica conexão
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
+
+// Se o formulário for enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = trim($_POST['username']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
+
+    // Verifica se as senhas coincidem
+    if ($password !== $confirm_password) {
+        echo "<script>alert('As senhas não coincidem!'); window.history.back();</script>";
+        exit;
+    }
+
+    // Criptografa a senha
+    $senha_hash = password_hash($password, PASSWORD_DEFAULT);
+
+    // Verifica se o usuário já existe
+    $sql_verifica = "SELECT * FROM tb_usuarios WHERE username = ? OR email = ?";
+    $stmt_verifica = $conn->prepare($sql_verifica);
+    $stmt_verifica->bind_param("ss", $username, $email);
+    $stmt_verifica->execute();
+    $resultado = $stmt_verifica->get_result();
+
+    if ($resultado->num_rows > 0) {
+        echo "<script>alert('Usuário ou e-mail já cadastrado!'); window.history.back();</script>";
+        exit;
+    }
+
+    // Insere o novo usuário
+    $sql = "INSERT INTO tb_usuarios (username, email, senha) VALUES (?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("sss", $username, $email, $senha_hash);
+
+    if ($stmt->execute()) {
+        echo "<script>alert('Cadastro realizado com sucesso! Faça login.'); window.location.href='login.php';</script>";
+    } else {
+        echo "<script>alert('Erro ao cadastrar. Tente novamente.');</script>";
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,15 +70,16 @@
 </head>
 
 <body>
+
 <!-- DROPDOWN (MENU DE NAVEGAÇÃO) -->
 <nav>
     <div class="logo"><a href="#"><img src="img/logotipo.png" alt=""></a></div>
     <ul>
-        <li><a href="principal.html">Home</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="agenda.html">Agenda</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="principal.php">Home</a></li>
+        <li><a href="sobre.php">Sobre</a></li>
+        <li><a href="servicos.php">Serviços</a></li>
+        <li><a href="agenda.php">Agenda</a></li>
+        <li><a href="login.php">Login</a></li>
     </ul>
 </nav>
 <br>
@@ -24,7 +87,7 @@
 <!-- CADRASTRO -->
 <div class="container-cadastro">
     <h2>Cadastro</h2>
-    <form action="login.html" method="post">
+    <form action="cadastro.php" method="post">
         <div class="input-group">
             <label for="username">Usuário:</label>
             <input type="text" id="username" name="username" required>

@@ -13,13 +13,14 @@
 <nav>
     <div class="logo"><a href="#"><img src="img/logotipo.png" alt=""></a></div>
     <ul>
-        <li><a href="principal.html">Home</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="agenda.html">Agenda</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="principal.php">Home</a></li>
+        <li><a href="sobre.php">Sobre</a></li>
+        <li><a href="servicos.php">Serviços</a></li>
+        <li><a href="agenda.php">Agenda</a></li>
+        <li><a href="login.php">Login</a></li>
     </ul>
 </nav>
+<br>
 
 <section id="sobre">
     <div class="container">

@@ -152,12 +152,6 @@ select, input[type="text"], input[type="tel"], input[type="email"] {
     background-color: #d1a9a4;
 }
  
-#iniciar-confirmacao-btn:disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
-}
- 
 /* --- CALENDÁRIO --- */
  
 .calendario {

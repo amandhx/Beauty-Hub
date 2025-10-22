@@ -13,11 +13,11 @@
 <nav>
     <div class="logo"><a href="#"><img src="img/logotipo.png" alt=""></a></div>
     <ul>
-        <li><a href="principal.html">Home</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="servicos.html">Serviços</a></li>
-        <li><a href="agenda.html">Agenda</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="principal.php">Home</a></li>
+        <li><a href="sobre.php">Sobre</a></li>
+        <li><a href="servicos.php">Serviços</a></li>
+        <li><a href="agenda.php">Agenda</a></li>
+        <li><a href="login.php">Login</a></li>
     </ul>
 </nav>
     
@@ -49,7 +49,7 @@
         <h2>Transforme Sua Beleza!</h2>
         <p>Agende seu horário e descubra o seu melhor visual com serviços personalizados Design de
             Sobrancelhas, Extenção de Cílios e Micropigmentação</p>
-        <a href="agenda.html" class="btn-agendar">AGENDAR AGORA</a> 
+        <a href="agenda.php" class="btn-agendar">AGENDAR AGORA</a> 
     </section>
     
     <section class="servicos-destaque">
@@ -90,7 +90,7 @@
         <div>
             <h3>Sua Jornada de Beleza Começa Aqui</h3>
             <p>Olá! Eu sou a Wanessa, e meu objetivo é realçar sua beleza natural e elevar sua autoestima com técnicas modernas e seguras. Venha conhecer meu espaço e minha história!</p>
-            <a href="sobre.html" class="btn-conhecer">CONHECER WANESSA</a>
+            <a href="sobre.php" class="btn-conhecer">CONHECER WANESSA</a>
         </div>
     </section>
     

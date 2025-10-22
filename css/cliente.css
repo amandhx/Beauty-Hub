@@ -1,0 +1,122 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Atkinson+Hyperlegible+Next:wght@400;600&display=swap');
+
+/* CORPO */
+body {
+    background-color: #fde8e8;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Atkinson Hyperlegible Next", sans-serif;
+    color: #333;
+}
+
+/* NAV */
+nav {
+    background-color: #505050;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #eabfb9;
+}
+
+/* LOGO */
+.logo img {
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 8px;
+    width: 40px;
+    border-radius: 24px;
+}
+
+/* CONTEÚDO */
+.container {
+    flex: 1;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.container h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.1rem;
+    color: #505050;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* GRID DE CARDS */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* CARD */
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 25px;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 5px solid #ffce51a8;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    border-top-color: #eabfb9;
+}
+
+.card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    color: #505050;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    background-color: #505050;
+    color: #ffce51a8;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
